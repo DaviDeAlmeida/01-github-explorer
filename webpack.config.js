@@ -6,13 +6,13 @@ const isDevelopment = process.env.NODE_ENV != 'production'
 module.exports = {
     mode: isDevelopment ? 'development': 'production',
     devtool: 'eval-source-map', // exibe exatamente o código da aplicação
-    entry: path.resolve(__dirname, 'src', 'index.jsx'),
+    entry: path.resolve(__dirname, 'src', 'index.tsx'),
     output: {
         path: path.resolve(__dirname, 'dist'), 
         filename: 'bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.jsx'], // auto completa/entende as extensões
+        extensions: ['.js', '.jsx', 'ts','tsx'], // auto completa/entende as extensões
     },
     devServer: {
         static: path.resolve(__dirname, 'public'), // Quando atualiza os arquivos faz o reload automatico
@@ -27,7 +27,7 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx$/,
+                test: /\.(j|t)sx$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
