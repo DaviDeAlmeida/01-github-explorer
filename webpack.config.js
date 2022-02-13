@@ -12,7 +12,7 @@ module.exports = {
         filename: 'bundle.js',
     },
     resolve: {
-        extensions: ['.js', '.jsx', 'ts','tsx'], // auto completa/entende as extensões
+        extensions: ['.js', '.jsx', '.ts','.tsx'], // auto completa/entende as extensões
     },
     devServer: {
         static: path.resolve(__dirname, 'public'), // Quando atualiza os arquivos faz o reload automatico
